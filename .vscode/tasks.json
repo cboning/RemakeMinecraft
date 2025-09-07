@@ -1,0 +1,46 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Minecraft",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-g",
+                "-O2",
+                "-pg",
+                "-I${fileDirname}/include",
+                "${file}",
+                "${fileDirname}/world.cpp",
+                "${fileDirname}/chunk.cpp",
+                "${fileDirname}/perlin.cpp",
+                "${fileDirname}/block.cpp",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-L/opt/homebrew/Cellar/glfw/3.4/lib",
+                "-L/opt/homebrew/Cellar/freetype/2.13.3/lib",
+                "-L${fileDirname}/lib",
+                "-lglfw",
+                "-framework",
+                "OpenGL",
+                "-lfreetype",
+                "${fileDirname}/glad.c"
+
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ],
+    "version": "2.0.0"
+}
+  
